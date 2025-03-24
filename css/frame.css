@@ -1,0 +1,131 @@
+
+
+
+body {
+    height:100vh;
+    width:100vh;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    font-weight: 200;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
+    
+  
+      background-color: #f5aaaa;
+      margin: 0;
+      padding: 0;
+  
+
+  }
+
+
+
+
+/* logo design */
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    animation: fadeIn 1s ease-in-out forwards;
+    text-transform: uppercase;
+    z-index: 10; 
+    position: absolute;
+    top: 20px; 
+    left: 20px; 
+    width: 100px;
+    letter-spacing: 5px;
+}
+
+
+
+@keyframes colorChange {
+    0% {
+        color: #94c4fa;
+    }
+    50% {
+        color: #ed7adc;
+    }
+    100% {
+        color: #4646c4;
+    }
+}
+
+.logo:hover {
+    animation: colorChange 0.5s ease-in-out infinite;
+}
+
+.box-weeks {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 0px;
+  }
+  
+  .box-week1 {
+    width: 400px;
+    height:450px;
+    padding: 10px;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #ffffff;
+    overflow: hidden;
+  }
+  
+  .box-week1 img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .box-week1 h2{
+    bottom: 25px; 
+    font-size: 35px;
+    color: #94c4fa; 
+    margin-top: 10px;
+  }
+
+
+  .footer {
+    background-color: #3d3a35; 
+    position: relative;
+    padding: 0px;
+    border-top: 3px solid #ab8e2c; 
+    border-bottom: 3px solid #ab8e2c; 
+    background-color: #94c4fa; 
+    font-family: Arial, sans-serif;
+    margin:0;
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+  
+
+  .footer {
+    text-align: center;
+    padding: 50px;
+    background-color: #f5aaaa;
+    border-top: 20px solid s#ab8e2c; 
+    }
+
+
+  #backToTopBtn {
+    position: fixed;
+    text-align: center;
+    bottom: 20px;
+    right: 20px;
+    padding:0;
+    
+    color: #94c4fa;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+      display: none}
+
+
+
+
+
+
+

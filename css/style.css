@@ -1,0 +1,62 @@
+/* 基础设置：黑色背景 + 终端风格字体 + 青蓝色文字 */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #000;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #00ffff;
+  }
+  
+  /* 容器：使用 Flex 布局，让图片和文字水平排列 */
+  .container {
+    display: flex;            /* 水平布局 */
+    align-items: center;      /* 垂直居中 */
+    justify-content: center;  /* 水平居中 */
+    height: 100%;             /* 让容器撑满整个窗口 */
+  }
+  
+  /* 图片容器：给右边留些空隙 */
+  .image-container {
+    margin-right: 40px;
+  }
+  
+  .image-container img {
+    max-width: 600px; /* 你可以根据需要调整图片大小 */
+    height: auto;
+  }
+  
+  /* 文字容器：左对齐 */
+  .text-container {
+    text-align: left;
+  }
+  
+  /* 标题样式 */
+  .text-container h1 {
+    margin: 0 0 20px 0;
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+  
+  /* 列表样式 */
+  .text-container ul {
+    list-style: none; /* 去掉默认列表圆点 */
+    padding: 0;
+    margin: 0;
+    line-height: 1.6;
+  }
+  
+  /* 列表项样式 */
+  .text-container li {
+    margin-bottom: 5px;
+  }
+  
+  /* 链接样式：悬停时下划线 */
+  .text-container li a {
+    color: #00ffff;
+    text-decoration: none;
+  }
+  .text-container li a:hover {
+    text-decoration: underline;
+  }
+  

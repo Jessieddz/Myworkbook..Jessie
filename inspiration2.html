@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>灵感记录</title>
+    <style>
+        body {
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f5aaaa;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color:#000000;
+            color: #000000;
+            padding: 10px 0;
+            text-align: center;
+            background-image: url("img/under-bg-e4d9f65e.png"), url('path_to_image2.png');
+            background-repeat: no-repeat, no-repeat; 
+            background-size: 25%, 30px 30px; 
+            background-position: center, bottom right; 
+            border: 4px solid #000000;  /* 设置黑色边框 */
+            display: inline-block;  /* 使其不占据整行 */
+            width: 100%;  
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* 将三个窗口水平居中 */
+            justify-content: center; /* 将三个窗口垂直居中 */
+            padding: 20px;
+        }
+        p{
+            font-size: 10px;
+            font-display:center;
+        }
+        h2 { font-size: 25px;
+            color: #000000;
+        }
+
+        section {
+            background-color: #ffffff;
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 100%; 
+            max-width: 600px; /* 限制每个 section 的最大宽度 */
+        }
+
+        #inspiration-window {
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            border: 3px solid #000;  /* 设置黑色边框 */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: inline-block;  /* 使其不占据整行 */
+            width: 100%;  
+            max-width: 600px; /* 限制 iframe 宽度 */
+        }
+
+        iframe {
+            width: 100%;
+            height: 300px; /* 固定高度 */
+            border: none;
+            border-radius: 8px;
+        }
+
+        .returnhome {
+            text-align: center;
+            position: absolute;
+            top: 83%;
+            left: 92%;
+            background: radial-gradient(white, #f5aaaa);
+            color: rgb(0, 0, 0);
+            border-radius: 50px;
+            width: 8em;
+            height: 8em;
+            cursor: pointer;
+        }
+
+        /* 设置可拖拽图片的样式 */
+        .draggable {
+            width: 318px;
+            height: 163px;
+            position: absolute;
+            cursor: move;
+        }
+
+        * {cursor:url("img/curtor.png"), auto;
+    }
+
+    .menu-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #94c4fa;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            z-index: 1000;
+        }
+
+        /* 菜单栏容器 */
+        .menu {
+            position: fixed;
+            top: 70px;
+            right: 0;
+            width: 100px;
+            height: 12.5%;
+            background-color: #36c9d9;
+            color: white;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+            z-index: 999;
+        }
+
+        /* 菜单项样 */
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu ul li {
+            padding:opx;
+            border-bottom: 1px solid #94c4fa;
+        }
+
+        .menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .menu ul li a:hover {
+            background-color:#94c4fa;
+        }
+
+        /* 菜单展开样 */
+        .menu.open {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Inspiration</h2>
+    </header>
+    <main>
+        <section id="inspiration-window">
+            <iframe src="https://other.ooo/" frameborder="0"></iframe>
+            <p>Other uses compelling graphic elements combined with overlapping and moveable text to create strong interactivity. The overall color is black and white, so the way the content is presented is simple and modern.</p>
+        </section>
+    </main>
+
+    <!-- 可拖拽的图片 -->
+    <img src="img/729f76dea72ee91f51c2efffc418d9d.png" class="draggable" id="image1" draggable="true" ondragstart="drag(event)" style="top: 200px; left: 50px;">
+  
+
+    <a href="week-2.html">
+        <div class="returnhome">
+            <br>
+            <br>
+            <span>Return to week two</span>
+        </div>
+    </a>
+
+    <script>
+        // 拖拽开始时记录拖动的元素
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        // 允许拖放目标元素
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        // 当拖拽的元素被放置时更新其位置
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            var draggedElement = document.getElementById(data);
+
+            // 计算新位置
+            var rect = ev.target.getBoundingClientRect();
+            var offsetX = ev.clientX - rect.left - draggedElement.offsetWidth / 2;
+            var offsetY = ev.clientY - rect.top - draggedElement.offsetHeight / 2;
+
+            draggedElement.style.left = offsetX + "px";
+            draggedElement.style.top = offsetY + "px";
+        }
+
+        // 在 body 上添加事件监听器以允许拖放
+        document.body.addEventListener("dragover", allowDrop);
+        document.body.addEventListener("drop", drop);
+    </script>
+
+        <!-- 菜单按钮 -->
+   <button class="menu-btn" onclick="toggleMenu()">☰ </button>
+
+   <!-- 菜单栏 -->
+   <div class="menu" id="menu">
+       <ul>
+           <li><a href="mainpage.html">Home</a></li>
+           <li><a href="week-1.html">Week 1 </a></li>
+           <li><a href="week-2.html">Week 2 </a></li>
+           <li><a href="week-3.html">Week 3</a></li>
+       </ul>
+   </div>
+
+   <script>
+       // 切换菜单显示状态
+       function toggleMenu() {
+           var menu = document.getElementById("menu");
+           menu.classList.toggle("open");
+       }
+   </script>
+
+</body>
+</html>

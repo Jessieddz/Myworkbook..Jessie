@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week one</title>
+    <link rel="stylesheet" href="css\week2.css">
+   
+   
+   <style>
+
+    * {cursor:url("img/curtor.png"), auto;}
+
+      .returnhome {
+           text-align: center;
+           position: absolute;
+           top: 83%;
+           left: 92%;
+           background: radial-gradient(white, #f5aaaa);
+           color: rgb(0, 0, 0);
+           border-radius: 50px;
+           width: 8em;
+           height: 8em;
+           cursor: pointer;
+       }
+
+       .menu-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #94c4fa;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            z-index: 1000;
+        }
+
+        /* 菜单栏容器 */
+        .menu {
+            position: fixed;
+            top: 70px;
+            right: 0;
+            width: 100px;
+            height: 9.5%;
+            background-color: #36c9d9;
+            color: white;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+            z-index: 999;
+        }
+
+        /* 菜单项样 */
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu ul li {
+            padding:opx;
+            border-bottom: 1px solid #94c4fa;
+        }
+
+        .menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .menu ul li a:hover {
+            background-color:#94c4fa;
+        }
+
+        /* 菜单展开样 */
+        .menu.open {
+            transform: translateX(0);
+        }
+
+   </style>
+  </head>
+  <body>
+    <section id="title">
+      <h1>Week two</h1>
+    </section>
+    <section class="wk-box">
+      <a href="inspiration2.html">
+      <div class="weeks" id="wk-1">Inspiration</div></a>
+      <a href="activities2.html">
+      <div class="weeks" id="wk-2">Activities</div></a>
+    </section>
+    <div id="shooting-stars" class="hidden">
+      <div class="stars1" id="star1"><pre>*-.</pre></div>
+      <div class="stars1" id="star2"><pre>*-.</pre></div>
+      <div class="stars1" id="star3"><pre>*-.</pre></div>
+      <div class="stars1" id="star4"><pre>*-.</pre></div>
+      <div class="stars1" id="star5"><pre>*-.</pre></div>
+      <div class="stars1" id="star6"><pre>*-.</pre></div>
+      <div class="stars1" id="star7"><pre>*-.</pre></div>
+    </div>
+    <a href="mainpage.html">
+      <div class="returnhome">
+          <br>
+          <br>
+          <span>Return Home</span>
+      </div>
+  </a>
+
+      <!-- 菜单按钮 -->
+      <button class="menu-btn" onclick="toggleMenu()">☰ </button>
+
+      <!-- 菜单栏 -->
+      <div class="menu" id="menu">
+          <ul>
+              <li><a href="mainpage.html">Home</a></li>
+              <li><a href="week-1.html">Week 1 </a></li>
+              <li><a href="week-2.html">Week 2 </a></li>
+              <li><a href="week-3.html">Week 3</a></li>
+          </ul>
+      </div>
+   
+      <script>
+          // 切换菜单显示状态
+          function toggleMenu() {
+              var menu = document.getElementById("menu");
+              menu.classList.toggle("open");
+          }
+      </script>
+
+  </body>
+</html>

@@ -1,0 +1,59 @@
+body{
+    text-align: center;
+}
+
+* {cursor:url("curtor.png"), auto;
+    }
+
+.container {
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        height: 100vh;
+        flex-direction: column 
+     }
+
+button{
+    position: relative;
+    font-size: 30px;
+    padding: 10px 20px;
+    font-family:'Times New Roman', Times, serif;
+    background-color: rgb(255, 249, 184) ;
+    border: 1px solid rgb(249, 68, 210);
+    font-weight: 700;
+    cursor: pointer;
+    z-index: 1;
+    transition: all 1s;
+}
+
+button:hover .after,
+ button:hover .before{
+    width: 50%;
+}
+
+.before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background-color:  rgb(249, 68, 210);
+    transition: all 0.5s;
+    z-index: -1;
+}
+
+button:hover{
+    color: aliceblue;
+}
+
+.after{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background-color: rgb(249, 68, 210);
+    transition: all 0.5s;
+    z-index: -1;
+
+}
